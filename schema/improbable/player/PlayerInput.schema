@@ -1,0 +1,39 @@
+package improbable.player;
+
+type Joystick
+{
+    float x_axis = 1;
+    float y_axis = 2;
+}
+
+type InputId
+{
+    uint32 id = 1;
+}
+
+type Jump
+{
+    bool jump=1;
+}
+
+type Attacks
+{
+    bool main_attack = 1;
+    bool secondary_attack =2;
+}
+
+component PlayerInput
+{
+    id = 1004;
+    Joystick joystick = 1;
+    InputId input_id  = 2;
+}
+
+component KeyboardInput
+{
+    id = 1005;
+    Attacks attacks = 1;
+    Jump jump = 2;
+    
+}
+

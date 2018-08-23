@@ -1,0 +1,180 @@
+Initialize engine version: 2018.1.3f1 (a53ad04f7c7f)
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.039 seconds
+UnloadTime: 0.458626 ms
+Command line build/worker/UnityWorker@Windows/UnityWorker@Windows.exe +assemblyName local_assembly +workerType UnityWorker +infraServicesUrl http://127.0.0.1:21000 +projectName beta_india_zulu_46 -batchmode -nographics -logfile external-default-unityworker.log
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+WorkerConfiguration settings
+AppName = 
+ProjectName = beta_india_zulu_46
+AssemblyName = local_assembly
+DeploymentId = 
+DeploymentTag = prod
+EngineId = UnityWorker57df3f05-ac11-41df-a310-3a01fdf3fd55
+EnginePlatform = UnityWorker
+WorkerId = UnityWorker57df3f05-ac11-41df-a310-3a01fdf3fd55
+WorkerPlatform = UnityWorker
+EntityCreationLimitPerFrame = 100
+InfraServiceUrl = http://127.0.0.1:21000
+LocatorHost = locator.improbable.io
+ReceptionistHost = 127.0.0.1
+ReceptionistPort = 7777
+LinkProtocol = RakNet
+LoginToken = 
+ProtocolLoggingOnStartup = False
+ProtocolLogPrefix = protocol-
+ProtocolLogMaxFileBytes = 104857600
+RaknetHeartbeatTimeoutMillis = 60000
+ReceiveQueueCapacity = 32768
+SendQueueCapacity = 16384
+ShowDebugTraces = False
+SteamToken = 
+TcpMultiplexLevel = 32
+UseExternalIp = True
+UseInstrumentation = True
+UsePerInstanceAssetCache = False
+UsePrefabPooling = False
+LogDebugToSpatialOs = False
+LogAssertToSpatialOs = False
+LogWarningToSpatialOs = True
+LogErrorToSpatialOs = True
+LogExceptionToSpatialOs = True
+
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 735c -> priority: 1 
+  Thread -> id: 8c28 -> priority: 1 
+Initialize engine version: 2018.1.3f1 (a53ad04f7c7f)
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.042 seconds
+UnloadTime: 0.480968 ms
+Command line build/worker/UnityWorker@Windows/UnityWorker@Windows.exe +assemblyName local_assembly +workerType UnityWorker +infraServicesUrl http://127.0.0.1:21000 +projectName beta_india_zulu_46 -batchmode -nographics -logfile external-default-unityworker.log
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+WorkerConfiguration settings
+AppName = 
+ProjectName = beta_india_zulu_46
+AssemblyName = local_assembly
+DeploymentId = 
+DeploymentTag = prod
+EngineId = UnityWorker6a9be658-39a9-4514-a908-4d95fd33cddd
+EnginePlatform = UnityWorker
+WorkerId = UnityWorker6a9be658-39a9-4514-a908-4d95fd33cddd
+WorkerPlatform = UnityWorker
+EntityCreationLimitPerFrame = 100
+InfraServiceUrl = http://127.0.0.1:21000
+LocatorHost = locator.improbable.io
+ReceptionistHost = 127.0.0.1
+ReceptionistPort = 7777
+LinkProtocol = RakNet
+LoginToken = 
+ProtocolLoggingOnStartup = False
+ProtocolLogPrefix = protocol-
+ProtocolLogMaxFileBytes = 104857600
+RaknetHeartbeatTimeoutMillis = 60000
+ReceiveQueueCapacity = 32768
+SendQueueCapacity = 16384
+ShowDebugTraces = False
+SteamToken = 
+TcpMultiplexLevel = 32
+UseExternalIp = True
+UseInstrumentation = True
+UsePerInstanceAssetCache = False
+UsePrefabPooling = False
+LogDebugToSpatialOs = False
+LogAssertToSpatialOs = False
+LogWarningToSpatialOs = True
+LogErrorToSpatialOs = True
+LogExceptionToSpatialOs = True
+
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 6950 -> priority: 1 
+  Thread -> id: 7b08 -> priority: 1 
+Disconnected: transport remote peer closed the connection
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Initialize engine version: 2018.1.3f1 (a53ad04f7c7f)
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly
+- Completed reload, in  0.105 seconds
+UnloadTime: 0.626810 ms
+Command line build/worker/UnityWorker@Windows/UnityWorker@Windows.exe +assemblyName local_assembly +workerType UnityWorker +infraServicesUrl http://127.0.0.1:21000 +projectName beta_india_zulu_46 -batchmode -nographics -logfile external-default-unityworker.log
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+WorkerConfiguration settings
+AppName = 
+ProjectName = beta_india_zulu_46
+AssemblyName = local_assembly
+DeploymentId = 
+DeploymentTag = prod
+EngineId = UnityWorker41036aad-b6ce-4a69-b939-34017fcdf00d
+EnginePlatform = UnityWorker
+WorkerId = UnityWorker41036aad-b6ce-4a69-b939-34017fcdf00d
+WorkerPlatform = UnityWorker
+EntityCreationLimitPerFrame = 100
+InfraServiceUrl = http://127.0.0.1:21000
+LocatorHost = locator.improbable.io
+ReceptionistHost = 127.0.0.1
+ReceptionistPort = 7777
+LinkProtocol = RakNet
+LoginToken = 
+ProtocolLoggingOnStartup = False
+ProtocolLogPrefix = protocol-
+ProtocolLogMaxFileBytes = 104857600
+RaknetHeartbeatTimeoutMillis = 60000
+ReceiveQueueCapacity = 32768
+SendQueueCapacity = 16384
+ShowDebugTraces = False
+SteamToken = 
+TcpMultiplexLevel = 32
+UseExternalIp = True
+UseInstrumentation = True
+UsePerInstanceAssetCache = False
+UsePrefabPooling = False
+LogDebugToSpatialOs = False
+LogAssertToSpatialOs = False
+LogWarningToSpatialOs = True
+LogErrorToSpatialOs = True
+LogExceptionToSpatialOs = True
+
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 89a4 -> priority: 1 
+  Thread -> id: 26f4 -> priority: 1 
+Disconnected: transport remote peer closed the connection
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Disconnected: transport remote peer closed the connection
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+

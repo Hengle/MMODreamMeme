@@ -1,0 +1,8 @@
+// id's from 1100
+package improbable.player;
+
+component PlayerRotation
+{
+    id = 1100;
+    float bearing = 1;
+}

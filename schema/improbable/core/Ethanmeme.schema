@@ -1,0 +1,8 @@
+package improbable.core;
+
+component UpperMemeCase
+{
+    id = 1454;
+    uint32 meme_int = 1;
+    uint32 max_memes = 2;
+}
