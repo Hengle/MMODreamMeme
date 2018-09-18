@@ -9,12 +9,16 @@ public class CombatManager : MonoBehaviour
 
     public AttackData selectedAttackData;
 
+    public SOWeapon MainHand;
+
     public bool CurrentlyAttacking = false;
-
     public float AttackOriginHeight = 0.0f;
-
     //private PlayerInputManager2 playerInput;
     private CharacterMovementController playerCharacterController;
+    private LivingEntity thisEntity;
+    private Inventory myInventory;
+
+
 
 
 
@@ -23,12 +27,14 @@ public class CombatManager : MonoBehaviour
     {
         //playerInput = GetComponent<PlayerInputManager2>();
         //playerCharacterController = GetComponent<CharacterMovementController>();
+        thisEntity = GetComponent<LivingEntity>();
+        myInventory = GetComponent<Inventory>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (CurrentlyAttacking)
         {
             SweepTransformOverTime(); // Process physics for attack
@@ -49,10 +55,10 @@ public class CombatManager : MonoBehaviour
     Quaternion _AttackDirection;
     float _AttackBearing;
     LivingCharacter[] hitCharacters;
-    List<EntityWithHealth> hitCharacters2 = new List<EntityWithHealth>();
+    List<LivingEntity> hitCharacters2 = new List<LivingEntity>();
 
     // This is called once at the start of the sweep sequence
-    public void StartAttackSequence(float attackBearing, AttackData inputAttackData)
+    public void StartAttackSequence(float attackBearing)
     {
         if (!CurrentlyAttacking)
         {
@@ -62,11 +68,16 @@ public class CombatManager : MonoBehaviour
 
             // Set the attacks time data
             CurTime = 0;
+
+            // Set our selectedAttack to what is in our main hand
+            selectedAttackData = MainHand.LightAttack;
+
+            // Set the attack time and percentage data;
             maxTime = selectedAttackData.AttackTime;
             NextAttackPercentage = selectedAttackData.NextAttackPercentage;
 
 
-            currAttack = inputAttackData;
+            currAttack = selectedAttackData;
             CurrentlyAttacking = true; // This will be hit in Update to actually process the attack sweeping
             attackStartingPosition = this.transform.position;
 
@@ -83,6 +94,13 @@ public class CombatManager : MonoBehaviour
         }
 
         return -1f;
+    }
+
+    // All damage shoudl go through here
+    void DealCombatDamageToEntity(LivingEntity entity)
+    {
+        
+        entity.DecrimentHealth(MainHand.GetDamage());
     }
 
     void SweepTransformOverTime()
@@ -109,15 +127,25 @@ public class CombatManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Linecast(CastStart, CastEnd, out hit, 1<<9))
         {
-            EntityWithHealth entity = hit.collider.gameObject.GetComponent<EntityWithHealth>();
+            LivingEntity entity = hit.collider.gameObject.GetComponent<LivingEntity>();
 
             if (entity != null)
             {
-                if (hitCharacters2.Contains(entity) == false)
+                Debug.Log((entity == null) + ", " + (thisEntity == null));
+                if (entity.team != thisEntity.team)
                 {
-                    hitCharacters2.Add(entity);
-                    entity.DecrimentHealth(currAttack.AttackDamage);
+                    if (hitCharacters2.Contains(entity) == false)
+                    {
+                        hitCharacters2.Add(entity);
+                        DealCombatDamageToEntity(entity);
+                    }
                 }
+            }
+
+            else
+
+            {
+
             }
             
             //hitCharacters2.Add(hit.transform.gameObject.GetComponent<LivingCharacter>())   
@@ -139,8 +167,9 @@ public class CombatManager : MonoBehaviour
             //if (AttackPercentage() > NextAttackPercentage && playerInput.AttackKeyDown) // This is supposed to assume you can hold the mouse down
             if (AttackPercentage() > NextAttackPercentage)
             {
+                currAttack = currAttack.NextAttack;
 				//currAttack = currAttack.NextAttack;
-                StartAttackSequence(_AttackBearing, currAttack.NextAttack);
+                StartAttackSequence(_AttackBearing);
             }
         }
     }

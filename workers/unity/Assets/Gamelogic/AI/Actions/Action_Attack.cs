@@ -14,7 +14,7 @@ public class Action_Attack : AIAction {
 
 	void IssueAttack(AIStateController stateController)
 	{
-		stateController._combatManager.StartAttackSequence(stateController.transform.rotation.eulerAngles.y, stateController._combatManager.selectedAttackData);
+		stateController._combatManager.StartAttackSequence(stateController.transform.rotation.eulerAngles.y);
 		CompleteAction(stateController);
 	}
 }

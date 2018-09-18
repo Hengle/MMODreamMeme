@@ -13,76 +13,67 @@ public class AIStateController : MonoBehaviour
     public State currentState;
     public State remainState;
 
-    public int Team;
+    //public int Team;
     public float AwarenessDistance = 30;
 
 
-    [HideInInspector] public Vector3 HomeLocation;
      public Vector3 TargetLocation;
      public GameObject TargetGameObject;
+    [HideInInspector] public Vector3 HomeLocation;
     [HideInInspector] public Transform LastKnownTarget;
     [HideInInspector] public NavMeshAgent navMeshAgent;
 
     [HideInInspector] public int CurrentActionIndex = 0;
     [HideInInspector] public CombatManager _combatManager;
+    [HideInInspector] public LivingEntity livingEntity;
     
-
-    private bool aiActive = false;
-
-    // Use this for initialization
-    void Awake()
+    void Start()
     {
+        Debug.Log("Calling AI start");
+
+        // Store agent
         navMeshAgent = GetComponent<NavMeshAgent>();
+
+        // Store living entity
+        livingEntity = GetComponent<LivingEntity>();
+        
+        // Get our combat manager
+        _combatManager = GetComponent<CombatManager>();
 
         // Enabling Ai agent here? Probably don't wanna do this
         HomeLocation = transform.position;
         TargetLocation = HomeLocation;
+        
+        // Initialize the AI?
+        SetupAI();
 
-        // Delay the start of the AI as seen below
-        int startFrame = Random.Range(1, 100);
-        startRoutine =  StartCoroutine(TestEnumer(startFrame));
 
-        // Set our combat manager value;
-        _combatManager = GetComponent<CombatManager>();
+
+        
     }
 
-    // This is dumb bullshit to stagger all AI across random frames when they update
-    // This should be formally handled
-    Coroutine startRoutine;
-    IEnumerator TestEnumer(int frameStart)
+    void Update()
     {
-        while(true)
-        {            
-            //Debug.Log(Time.frameCount);
-            if(frameStart <= Time.frameCount)
-            {
-                SetupAI();
-                InvokeRepeating("SlowUpdate", 0, 0.25f); //HACK - update AI slowly
-                StopCoroutine(startRoutine);
-                yield return null; // Someone rewrite this for the love of god.
-            }
-
-            else 
-            {
-                yield return 0;
-            }
-        }
+        //Debug.Log("dicks");
     }
+
+    public bool aiActive = false;
+
+    // Use this for initialization
+    void Awake()
+    {
+
+    }
+
     
 
     public void SetupAI()
     {
-        // Se tthe AI to true by default
         aiActive = true;
-        
-        // Set the navmesh to be enabled if the ai is enabled
         navMeshAgent.enabled = aiActive;
 
-        // Upload this agent to thebrain
-        //brain.AddNewAgent(this);
-
-        // Pick a random team to join
-        Team = Random.Range(1,5);
+        // Begin the slow update invoke
+        InvokeRepeating("SlowUpdate", 0, 0.4f);
     }
 
     public void TransitionToState(State nextState)
@@ -95,11 +86,6 @@ public class AIStateController : MonoBehaviour
         }
 
     }
-
-
-
-    //Update is called once per frame
-
 
     void SlowUpdate()
     {
@@ -123,10 +109,6 @@ public class AIStateController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            print(brain.listOfFarms.Count);
-        }
 
         //Debug.Log(currentState == null);
 

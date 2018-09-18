@@ -15,7 +15,7 @@ MonoBehaviour:
   NextAttackPercentage: 0.8
   UIName: Medium Kick
   CritMultiplier: 34
-  AttackDamage: 4
+  AttackDamage: 100
   AttackRange: 3
   NextAttack: {fileID: 11400000, guid: a806e1f8aa6f7124686509aec8741a18, type: 2}
   MaxDamageCurve:
@@ -24,7 +24,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  MaxTargets: 4
+  MaxTargets: 2
   ForwardSweep:
     serializedVersion: 2
     m_Curve:

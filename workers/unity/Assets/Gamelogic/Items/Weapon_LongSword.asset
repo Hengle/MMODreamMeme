@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76265cc1df6392b489faa48b8aa41e47, type: 3}
+  m_Name: Weapon_LongSword
+  m_EditorClassIdentifier: 
+  Name: Longsword
+  Description: This sword is long
+  m_CurrentStackCount: 1
+  m_Volume: 15
+  m_MaintainsState: 1
+  itemType: 32
+  Durability: 10
+  LightAttack: {fileID: 11400000, guid: 0d90e7932b49b8642958e6e3da9e8215, type: 2}
+  HeavyAttack: {fileID: 11400000, guid: a806e1f8aa6f7124686509aec8741a18, type: 2}
+  m_weaponType: 34
+  m_ItemStats:
+  - m_ItemStats: 1
+    m_value: 100
+  - m_ItemStats: 2
+    m_value: 10
+  - m_ItemStats: 16
+    m_value: 5
+  - m_ItemStats: 8
+    m_value: 10
+  - m_ItemStats: 32
+    m_value: 2

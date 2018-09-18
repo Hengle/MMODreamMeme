@@ -64,7 +64,7 @@ public class PlayerInputManager2 : MonoBehaviour
         // Issue an attack if we're attakcking
         if (AttackKeyDown)
         {  
-            _combatManager.StartAttackSequence(PlayerViewRotation.eulerAngles.y, _combatManager.selectedAttackData);
+            _combatManager.StartAttackSequence(PlayerViewRotation.eulerAngles.y);
             //GetComponent<CombatManager>().StartAttackSequence(PlayerViewRotation.eulerAngles.y);
         }
 

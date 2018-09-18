@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-using System.Diagnostics;
+//using System.Diagnostics;
 
 using AI;
 
@@ -34,16 +34,26 @@ public class Decision_EnemyClose : Decision {
 		{
 			foreach(Collider col in hitColliders)
 			{
-				int coliderTeam = col.GetComponent<AIStateController>().Team;
+				LivingEntity livingEntity = col.GetComponent<LivingEntity>();
 
-				if (coliderTeam != stateController.Team)
+				if (livingEntity != null)
 				{
-					//UnityEngine.Debug.Log(col.name);
-					stateController.TargetGameObject = col.gameObject; //HACK -  Set the Current target as this new enemy - this shouldnt be here
-					return true;
+					int coliderTeam = livingEntity.team;
+					if (coliderTeam != stateController.livingEntity.team)
+					{
+						//UnityEngine.Debug.Log(col.name);
+						//stateController.TargetGameObject = col.gameObject; //HACK -  Set the Current target as this new enemy - this shouldnt be here
+						//Debug.Log("new enemy was found");
+						return true;
+					}
 				}
-			}
 
+				else
+				{
+					Debug.Log("Entity component was null on NPC layer?");
+				}
+
+			}
 			return false;
 		}
 		
